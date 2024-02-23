@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 signal life_changed
@@ -61,7 +62,7 @@ func change_state(new_state: State)  -> void:
 func get_input() -> void:
     if state == State.HURT:
         return
-        
+
     var left = Input.is_action_pressed("move_left")
     var right = Input.is_action_pressed("move_right")
     var jump = Input.is_action_just_pressed("jump")
