@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxpan21w7qnl2"]
+[gd_scene load_steps=7 format=3 uid="uid://dxpan21w7qnl2"]
 
+[ext_resource type="Script" path="res://items/item.gd" id="1_1nj33"]
 [ext_resource type="Texture2D" uid="uid://cm0yxvo16cogk" path="res://assets/sprites/cherry.png" id="1_etkh4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_osdd4"]
@@ -46,6 +47,7 @@ _data = {
 [node name="Item" type="Area2D"]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_1nj33")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_etkh4")
