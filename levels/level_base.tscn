@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://uecvqlji2dv7"]
+[gd_scene load_steps=9 format=3 uid="uid://uecvqlji2dv7"]
 
 [ext_resource type="Texture2D" uid="uid://cs5m7r17fup61" path="res://assets/environment/tileset.png" id="1_hghwc"]
 [ext_resource type="Texture2D" uid="uid://3eerkws47td5" path="res://assets/environment/props.png" id="2_yuv1h"]
+[ext_resource type="TileSet" uid="uid://dn505hopwb4de" path="res://assets/tilesets/tiles_items.tres" id="3_oyjsq"]
+[ext_resource type="TileSet" uid="uid://blhd0ogpuydej" path="res://assets/tilesets/tiles_spikes.tres" id="4_n0ms1"]
+[ext_resource type="PackedScene" uid="uid://cwukg82scp5h8" path="res://player/player.tscn" id="5_7pb4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwqdk"]
 texture = ExtResource("1_hghwc")
@@ -760,6 +763,18 @@ sources/1 = SubResource("TileSetAtlasSource_uw50i")
 
 [node name="LevelBase" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="World" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_aqnlk")
 format = 2
+
+[node name="Items" type="TileMap" parent="."]
+tile_set = ExtResource("3_oyjsq")
+format = 2
+
+[node name="Danger" type="TileMap" parent="."]
+tile_set = ExtResource("4_n0ms1")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("5_7pb4i")]
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
